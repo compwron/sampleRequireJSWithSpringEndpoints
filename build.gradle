@@ -1,0 +1,45 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+
+    test {
+        java {
+            srcDirs = ['test']
+        }
+    }
+}
+
+List SPRING_SOURCES = [
+        "org.springframework:spring-core:3.2.2.RELEASE:sources",
+        "org.springframework:spring-aop:3.2.2.RELEASE:sources",
+        "org.springframework:spring-expression:3.2.2.RELEASE:sources",
+        "org.springframework:spring-beans:3.2.2.RELEASE:sources",
+        "org.springframework:spring-context:3.2.2.RELEASE:sources",
+        "org.springframework:spring-context-support:3.2.2.RELEASE:sources",
+        "org.springframework:spring-webmvc:3.2.2.RELEASE:sources",
+        "org.springframework:spring-web:3.2.2.RELEASE:sources",
+        "org.springframework:spring-tx:3.2.2.RELEASE:sources",
+        "org.springframework:spring-tx:2.5.4",
+        "org.springframework.data:spring-data-mongodb:1.2.0.RELEASE",
+        "org.springframework:spring-orm:3.2.2.RELEASE",
+        "org.springframework:spring-oxm:3.2.2.RELEASE",
+        "org.springframework.security:spring-security-core:3.1.4.RELEASE",
+        "org.springframework.security:spring-security-config:3.1.4.RELEASE",
+        "org.springframework.security:spring-security-web:3.1.4.RELEASE"
+
+]
+
+dependencies{
+    compile 'junit:junit:4.11', SPRING_SOURCES
+    
+}
